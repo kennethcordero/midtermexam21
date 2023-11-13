@@ -13,18 +13,6 @@ def insert_heart_record():
     heart_id = data.get('heart_id')
     date_str = data.get('date')
     heart_rate = data.get('heart_rate')
-
-    
-    if not all([heart_id, date_str, heart_rate]):
-        return jsonify({"error": "Incomplete data"}), 400
-
-    try:
-        
-        date = datetime.strptime(date_str, "%Y-%m-%d")
-    except ValueError:
-        return jsonify({"error": "Invalid date format"}), 400
-
-    
     new_record = {
         "heart_id": heart_id,
         "date": date.strftime("%Y-%m-%d"),
