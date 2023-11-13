@@ -5,7 +5,6 @@ from datetime import datetime
 app = Flask(__name__)
 json_file_path = "heart_records.json"
 
-
 @app.route('/insert_heart_record', methods=['POST'])
 def insert_heart_record():
     data = request.get_json()
